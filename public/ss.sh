@@ -22,11 +22,6 @@ function usage() {
 }
 
 function install() {
- 
-
-  echo "Configuring OpenWhisk"
- wsk property set --apihost openwhisk.ng.bluemix.net --auth 6fee80b2-558a-4c03-b84d-82493af04646:Rq9c2NQcLsyENY6YUIlipVf2tLnRGr9cZAJnRSB7kwweLho4AZJfIm0beuxLVGGN --namespace "openwhisk3218_openwhisk"
-
   echo "creating action in openwhisk"
   wsk action create devopstask123 hello.js
   
