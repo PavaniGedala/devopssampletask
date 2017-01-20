@@ -25,26 +25,21 @@ function install() {
   echo "creating action in openwhisk"
   wsk action create devopstask123 hello.js
   
+    echo "creating  triggerin openwhisk"
+  wsk trigger create sampletrigger
 }
 
 function uninstall() {
   echo "Removing actions..."
-  wsk action delete vision/analysis
+  wsk action create devopstask123
   wsk action delete vision/extractor
 
   echo "Removing rule..."
   wsk rule disable vision-rule
   wsk rule delete vision-rule
 
-  echo "Removing change listener..."
-  wsk action delete vision-cloudant-changelistener
-
   echo "Removing trigger..."
-  wsk trigger delete vision-cloudant-trigger
-
-  echo "Removing packages..."
-  wsk package delete vision-cloudant
-  wsk package delete vision
+  wsk trigger delete sampletrigger
 
   echo "Done"
   wsk list
